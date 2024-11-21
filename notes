@@ -89,5 +89,11 @@ tcpdump -n -r capstone-bpf.pcap "ip[6]&0x40=0x40&&tcp[13]=5" | wc -l
 
 
 
+answers for capstone 03 web questions
+
+1: S0VSTkVMCg==
+2: YmluYXNjaWkK
+3: QkJISEhCQkg0czRzCg==
+
 
 
