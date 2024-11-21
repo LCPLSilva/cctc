@@ -82,5 +82,9 @@ Provide the number of ports converted to BASE64.
 
 
 
+tcpdump -n -r capstone-bpf.pcap "ip[6] & 0x20=0x20||ip[6:2]&0x1fff>0" | wc -l
+
+
+
 
 
