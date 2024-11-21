@@ -16,3 +16,26 @@ float IP of pivot : 10.50.20.84
 10.1.1.90: no ports
 10.1.1.125: no ports
 10.1.1.126: no ports
+
+
+
+updated:
+float IP of pivot : 10.50.20.84
+
+10.1.1.30: 80, pivot for network fundamentals and programming sections
+
+10.1.1.33: 21, 23, 80
+"RIPv2 seems to be running on the 10.1.1.0/25 network, try to sniff out the traffic to find out what networks its advertising in its updates. what you find will be the IP address of the next environment pivot to access from INTERNET_HOST
+
+10.1.1.11: 21,23
+there is a webservice running on the port that corresponds with the RFC that governs Private IPv4 addressing
+there is a PCAP saved in the share folder of this machine that you should look at
+
+10.1.1.25: 21
+there is a webservice running on the port that corresponds with the RFC that governs IPv4 Header structure
+There is another hint in the student home drive, there is no SSh access to this system so try using FTP with your student credentials
+
+
+10.1.1.90: no ports
+10.1.1.125: no ports
+10.1.1.126: no ports
