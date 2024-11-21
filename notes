@@ -17,7 +17,7 @@ float IP of pivot : 10.50.20.84
 10.1.1.125: no ports
 10.1.1.126: no ports
 
-
+***THE ANSWER TO THE WEB QUESTIONS IS ON THE 10.1.1.11:1918, WGET -R HTTP://10.1.1.11:1918***
 
 updated:
 float IP of pivot : 10.50.20.84
