@@ -79,6 +79,8 @@ Question 4:
 An attacker is targeting the host 10.0.0.104 with either a TCP full or half open scan. Based off the pcap, how many ports are open?
 
 Provide the number of ports converted to BASE64.
+ tcpdump -n -r capstone-bpf.pcap "tcp[13] = 18 and ip[12:4]=0x0a000068" | wc -l
+
 
 
 
