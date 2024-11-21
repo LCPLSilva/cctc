@@ -101,3 +101,4 @@ if you wanna find it yourself, its on the webserver over port 791 on the 10.1.1.
 6: QmF6aW5nYQo=
 
 
+telnet to 10.1.1.33, then run tcpdump -i eth0 "port 520" -vv
