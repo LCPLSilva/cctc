@@ -1,3 +1,7 @@
+once u ssh onto the pivot u need to create a dynamic tunnel to get ur proxychains on the machine. 
+once ur on capstone one with a dynamic tunnel open, run a bash ping sweep like i showed u and figure out all the devices communicating with our float. 
+then just run nmap scans through proxychains on the internet host through your dynamic tunnel on each system. thats where i found the info below.
+
 float IP of pivot : 10.50.20.84
 
 10.1.1.30: 80, pivot for network fundamentals and programming sections
