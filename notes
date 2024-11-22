@@ -102,3 +102,66 @@ if you wanna find it yourself, its on the webserver over port 791 on the 10.1.1.
 
 
 telnet to 10.1.1.33, then run tcpdump -i eth0 "port 520" -vv
+
+
+so once i got on the .126 via iptable mangle rule and using port 7777, i realized it had access to the 10.2.2.6/25 network. then i found the 10.2.2.7 which had important hint on it. it also has access to the 10.10.10.129/29 network, 
+just succesfully made a reverse tunnel from the 10.2.2.7 back to the .126 using the internal interface and now i have a working dynamic tunnel made so i can use my port scans. from there i found the 10.10.10.140, .167, .182, and the .181. scanning them now
+to see what i can find
+
+****password for 10.2.2.7****
+"H0ld 73h d00r?"
+
+10.10.10.140 (capstone-08) : 301, 21  --> ssh is running on the port that corresponds with the HTTP status code for Moved permanently. the flag is the port number(301) converted to BASE64, This system also seems to be a pivot for the network reconnaissance section
+10.10.10.167 (capstone-10): 404, 80 --> ssh is running on a port that corresponds with the HTTP status code for not found. The flag for this system is the port number converted to BASE64, this system seems to be a pivot for the movement and redirection section
+10.10.10.182 (capstone-12): 504, 21 --> ssh is running on the port that corresponds with the http status code for Gateway Timeout. the flag for this system is the port to base64, this sytem seems to be a pivot for the network analysis and filtering sections.
+10.10.10.181(?):no ports found 
+
+after ssh'ing to the 10.10.10.140, i found these stations
+
+192.168.10.39(capstone-09): 3790, 21 --> there is a webservice running on the sa,e port that metasploit uses for its webservice
+web question 1 *2 attempts left*
+You are performing ARP scans and sending Gratuitous ARPs to perform a MitM attack. Which phase of reconnaissance are you in? 
+  <br>
+  <p>Provide the 2 word phase in ALL CAPS and converted to Base64.
+
+192.168.10.44:
+192.168.10.35:
+192.168.10.62:
+
+after ssh'ing onto the 10.10.10.167 i found these stations
+
+192.168.10.70:
+192.168.10.74: no ports
+192.168.10.80: 21 --> there is a webservice running on the port that corresponds with the default port for Proxychains.  trouble with question 1..smh 
+
+
+Which SSH syntax will properly setup a Local port forward from the “Outside Host” to access to the Internal Website?</p>
+  <br>
+  <pre>
+      -----------     ------       ----------    -------
+      | Outside |     | FW |       | Inside |    | Web |
+      -----------     ------       ----------    -------
+      147.25.99.1                 192.168.1.27  188.8.8.8
+  </pre>
+  <br>
+  <p>A.) ssh outside@192.168.1.27 -L 1234:188.8.8.8:80 -NT</p>
+  <p>B.) ssh inside@147.25.99.1 -L 9876:188.8.8.8:1234 -NT</p>
+  <p>C.) ssh outside@147.25.99.1 -L 1234:188.8.8.8:80 -NT</p>
+  <p>D.) ssh inside@192.168.1.27 -L 1234:188.8.8.8:80 -NT</p>
+  <br>
+  <p>Provide only the LETTER answer in ALL CAPS and converted to Base64.</p>
+
+192.168.10.94:
+
+
+after ssh'in into the 10.10.10.182, found these hoes
+
+192.168.10.99:
+192.168.10.101: 999, 998, 801, 798, 791, 690, 584, 567, 444, 22, 21, --> there is a webservice on the port that is the sum of the 2 SMB ports used by thw wannacry ransomware (584)
+web question 4 *2 attempts left* 
+A network admin starts to notice an increase in requests for certain files, changes to the registry and unusual tasks being run.
+ This anomaly is an Indicator of ________?
+
+192.168.10.106:
+192.168.10.111:
+192.168.10.126
